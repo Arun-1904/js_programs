@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt box</title>
+    <script>
+    var name1=prompt("Enter Your Name To Enroll","Arun");
+     if(name1!=null)
+    { 
+        alert("Hiii...."+name1+"....Hello....Welcome");
+    }else         
+    {
+        alert("Thank You Visit Again")   
+    }
+
+    var age,permit;
+    age=prompt("Enter Your Age To Enroll","10")
+
+    if(age<10)
+    {
+        permit=confirm("do you get parental permission...?")
+        if(permit)
+        { 
+        alert("you're allowed to join")
+        }
+         else{
+        alert("you're not allowed to join");
+        }
+    }    
+        else{
+              alert("welcome to our class")
+            }
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

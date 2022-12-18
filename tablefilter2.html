@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myinput" placeholder="enter to names to search" onkeyup="search()">
+    <table border="1px" id="mytable">
+        <thead>
+            <th>Name</th>
+            <th>city</th>
+        </thead>
+        <tr>
+            <td>arun</td>
+            <td>chennai</td>
+        </tr>
+
+        <tr>
+            <td>tamil</td>
+            <td>Virugambakkam</td>
+        </tr>
+
+        <tr>
+            <td>Ajith</td>
+            <td>vadapalani</td>
+        </tr>
+    </table>
+</body>
+<script>
+    function search() {
+
+        var input = document.getElementById("myinput");
+        var filter = input.value.toUpperCase();
+        var table = document.getElementById("mytable");
+        var tr = table.getElementsByTagName("tr");
+        for (var i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")
+            for (var j = 0; j < td.length; j++) {
+                tdata = td[j]
+                if (tdata) {
+                    if(tdata.innerHTML.toUpperCase().indexOf(filter) > -1){
+                        tr[i].style.display = "";
+                        break;
+                    }else {
+                        tr[i].style.display = "none"
+                    }
+                }
+            }
+        }
+
+    }
+</script>
+
+</html>

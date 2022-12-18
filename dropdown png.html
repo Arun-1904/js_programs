@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drop down png</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .dropdown-content {
+            display: none;
+            background-color: antiquewhite;
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+        }
+
+        button {
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white
+        }
+
+        .container:hover .dropdown-content {
+            display: block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button>CLICK TO DROP DOWN</button>
+        <div class="dropdown-content">
+            <a href="www.google.pdf"><i class="fa fa-file-pdf-o" style="font-size: 18px"></i> PDF</a><br>
+            <a href="www.google.doc"><i class="fa fa-file-text" style="font-size: 18px"></i> DOC</a><br>
+            <a href="www.google.file"><i class="fa fa-file" style="font-size: 18px"></i> FILE</a><br>
+            <a href="www.google.word"><i class="fa fa-file-word-o" style="font: 18px"></i> WORD</a><br>
+        </div>
+    </div>
+
+</body>
+
+</html>

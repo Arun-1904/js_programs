@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 288px;
+        }
+
+        .loader {
+            position: relative;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            border-radius: 70px;
+        }
+
+        .loader::before {
+            background-color: lightcoral;
+            left: 0;
+            transform: translateX(10px);
+            animation: moveleft 1s ease infinite;
+        }
+
+        .loader::after {
+            background-color: lightseagreen;
+            right: 0;
+            transform: translateX(-10px);
+            animation: moveright 1s ease infinite;
+        }
+
+        @keyframes moveright {
+
+            0% {
+                transform: translateX(-10px);
+
+            }
+
+            50% {
+                transform: translateX(10px);
+                background-color: rgba(32, 178, 171, 0.589);
+            }
+
+            100% {
+                transform: translateX(-10px);
+
+            }
+
+
+        }
+
+        @keyframes moveleft {
+
+            0% {
+                transform: translateX(10px);
+
+            }
+
+            50% {
+                transform: translateX(-10px);
+                background-color: rgba(240, 128, 128, 0.575);
+            }
+
+            100% {
+                transform: translateX(10px);
+
+            }
+
+
+        }
+
+        div p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main" style="text-align:center;">
+        <h1>What are CSS Animations?</h1>
+        <p> An animation lets an element gradually change from one style to another.
+
+            You can change as many CSS properties you want, as many times as you want.
+
+            To use CSS animation, you must first specify some keyframes for the animation.
+
+            Keyframes hold what styles the element will have at certain times.</p>
+    </div>
+    <div class="container">
+
+        <div id="load"></div>
+
+
+    </div>
+</body>
+<script>
+    document.querySelector(".main").style.display = "none"
+    document.getElementById("load").classList.add("loader")
+
+
+    setTimeout(() => {
+
+        document.getElementById("load").classList.remove("loader")
+        document.querySelector(".main").style.display = "block"
+
+
+    }, 5000)
+    addEventListener("click", setTimeout)
+</script>
+
+</html>

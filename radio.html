@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-transform: uppercase;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>radio button validation</h1>
+
+    <form name="myform">
+        <div id="container">
+            <input type="radio" name="gender" value="Gender" id="male">
+            <label for="male">Gender</label><br><br>
+
+            <input type="radio" name="gender" value="Female" id="female">
+            <label for="female">Female</label><br><br>
+
+            <input type="radio" name="gender" value="Others" id="others">
+            <label for="others">Others</label>
+        </div>
+    </form>
+
+    <h1>select tag validation</h1>
+
+    <form name="mycountry">
+        <label for="country">Choose your country:</label>
+        <select name="country" id="country">
+            <option value="">--Select Country--</option>
+            <option value="IND">India</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="MYS">Malaysia</option>
+            <option value="SGP">Singapore</option>
+            <option value="THA">Thailand</option>
+        </select>
+    </form>
+
+      
+</body>
+<script src="jsfiles/radio.js"></script>
+
+
+</html>

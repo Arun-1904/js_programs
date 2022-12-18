@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://andrewlock.net/content/images/2016/10/icon.png">
+    <title>form</title>
+</head>
+
+<body>
+    <center>
+        <h1>FILL THE FORM</h1>
+        <hr>
+        <hr>
+        <form id="f" action="#">
+            <label for="First Name">FIRST NAME : </label>
+            <input id="fn" type="text" placeholder="Enter Your First Name ">
+            <br><br>
+            <label for="Last name:">LAST NAME :</label>
+            <input id="ln" type="text" placeholder="Enter Your Last Name">
+            <br><br>
+
+            <label for="gender">Gender : </label>
+            <label for="male"><input type="radio" name="gender" value="male">Male</label>
+            <label for="Female"><input type="radio" name="gender" value="Female">Female</label>
+            <label for="others"><input type="radio" name="gender" value="Others">Others</label>
+            <br><br>
+
+            <label for="ph no">PH NO :</label>
+            <input id="no" type="number" placeholder="Enter Your Phone Number">
+            <br><br>
+
+            <label>Hobbies <i>(Optional)</i></label>
+            <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+            <label><input type="checkbox" name="hobbies" value="movies"> Movies</label>
+            <label><input type="checkbox" name="hobbies" value="music"> Music</label>
+            <br><br>
+
+            <label for="Password">PASSWORD</label>
+            <input id="pd" type="password" placeholder="Password">
+            <br><br>
+
+            <label for="country">Country</label>
+            <select name="country" id="country">
+                <option value="india">India</option>
+                <option value="australia">Australia</option>
+                <option value="america">America</option>
+                <option value="london">London</option>
+            </select>
+
+            <br><br>
+
+            <button onclick="onButtonClickHandler()">click</button>
+
+        </form>
+
+    </center>
+    <script>
+        // var a = document.getElementById("fn").value
+        // console.log(a)
+
+        // var b = document.getElementById("ln").value
+        // console.log(b)
+
+        // var c = document.getElementById("no").value
+        // console.log(c)
+
+        function onButtonClickHandler() {
+            event.preventDefault();
+            var first = document.getElementById("fn");
+            var last = document.getElementById("ln");
+            var ph = document.getElementById("no");
+            var pd = document.getElementById("pd")
+            var country = document.getElementById("country")
+            let gender = document.querySelector('input[name="gender"]:checked').value
+            var hobbies = [];
+            var checkboxes = document.getElementsByName("hobbies");
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    // Populate hobbies array with selected values
+                    hobbies.push(checkboxes[i].value);
+                }
+               // console.log(hobbies)
+                // function myfunc() {
+                //    var gender= document.getElementsByName("gender")
+
+                //     for (var i = 0; i < gender.length; i++) {
+                //         if (gender[i].checked)
+                //             console.log(gender[i].value)
+
+                //         else if (gender[i].checked)
+                //             console.log(gender[i].value)
+
+                //         else if (gender[i].checked)
+                //             console.log(gender[i].value)
+                //     }
+                // }
+                // myfunc()
+                // console.log(gender.value)
+
+                // console.log(gender)
+
+                console.log(fn.value, ln.value, gender, hobbies,no.value, pd.value, country.value, );
+                // console.log(`first name is ${fn.value} Second name is ${ln.value} phone number is${ph.value}  country is ${country.value} `)
+
+                // alert(`first name is ${fn.value} Second name is ${ln.value} phone number is${ph.value}  country is ${country.value} `)
+                // // alert("First Name is :" + fn.value)
+                // alert("Last Name is :" + ln.value)
+                // alert("Ph no is :" + no.value)
+                // alert("Password is :" + pd.value)
+
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

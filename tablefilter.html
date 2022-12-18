@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Filter</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/107/107799.png">
+
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            text-align: center;
+            border: 1px solid black;
+            align-items: center;
+            padding: 10px 10px 10px 10px;
+            width: 80%;
+            margin-left: 100px;
+            padding: auto;
+        }
+
+        th {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        input {
+            text-align: center;
+            width: 80%;
+            background-color: bisque;
+            margin-left: 100px;
+            padding: auto;
+            color: rgb(2, 2, 2)
+        }
+
+        th {
+            background-color: azure;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>TABLE FILTER USING JAVASCRIPT</h1>
+
+    <input id="myinput" type="text" placeholder="Search For Names....." onkeyup="search_table()">
+
+    <br><br>
+
+
+    <table id="mytable">
+        <thead>
+            <th>Name</th>
+            <th>Phone No</th>
+            <th>Area</th>
+            <th>pin code</th>
+        </thead>
+
+        <tr>
+            <td>Arunachalam</td>
+            <td>11111</td>
+            <td>Porur</td>
+            <td>0</td>
+        </tr>
+
+
+        <tr>
+            <td>Tamilarasan</td>
+            <td>22222</td>
+            <td>Virugambakkam</td>
+            <td>1</td>
+        </tr>
+
+
+        <tr>
+            <td>Ajith</td>
+            <td>33333</td>
+            <td>KK nagar</td>
+            <td>2</td>
+        </tr>
+
+
+        <tr>
+            <td>Prasanth</td>
+            <td>44444</td>
+            <td>Chrompet</td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td>Kanniappan</td>
+            <td>55555</td>
+            <td>Pozhichalur</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td>Abcd</td>
+            <td>66666</td>
+            <td>xyz</td>
+            <td>5</td>
+        </tr>
+
+    </table>
+
+</body>
+<script>
+    function search_table() {
+        // Declare variables 
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myinput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("mytable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query  
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            for (j = 0; j < td.length; j++) {
+                let tdata = td[j];
+                if (tdata) {
+                    if (tdata.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    }
+
+
+</script>
+
+</html>
+
+<!-- 
+for (var i = 0; i < tr.length; i++) {
+    var td = tr[i].getElementsByTagName("td")
+    for (var j = 0; j < td.length; j++) {
+        tdata = td[j]
+        if (tdata) {
+            if (tdata.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                break;
+            }else{
+                tr[i].style.display="none"
+            }
+
+        }
+    }
+} -->
+
+<!-- 
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+} -->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var pokemon = {
+            firstname: 'Pika',
+            lastname: 'Chu ',
+            getPokeName: function () {
+                var fullname = this.firstname + ' ' + this.lastname;
+                return fullname;
+            }
+        };
+
+        var pokemonName = function () {
+            console.log(this.getPokeName() + 'I choose you!');
+        };
+
+        var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemon now
+
+        logPokemon(); // 'Pika Chu I choose you!'
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
